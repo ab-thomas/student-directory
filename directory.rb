@@ -17,12 +17,23 @@ students = [
 	"Nabin"
 	"Peter"
 ]
-# and then print them
-puts "The students of my cohort at Makers Academy"
-puts "------------"
-student.each do |student|
-	puts student
+
+def print_header
+	puts "The students of my cohort at Makers Academy"
+	puts "--------------"
 end
-# finally, we print the total
-puts "Overall, we have #{student_count.length} great studetns"
+
+def print(names)
+	names.each do |name|
+	put name
+end
+
+def print_footer(names)
+	puts "Overall, we have #{names.length} great students"
+end
+
+# nothing happens until  we call the methods
+print_header
+print(students)
+print_footer(students)
 
