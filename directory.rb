@@ -3,11 +3,16 @@ def print_header
   puts "-------------"
 end
 
-def print(students)
-  students.each_with_index do |student, index|
+
+def print_student_beginning_with_a(students)
+  students = students.select {|student| student[:name].chars.length <= 12}
+  students_with_a = students.select {|student| student[:name].chars.first.upcase == "A" }
+
+  students_with_a.each_with_index do |student, index|
     puts "#{index+1} #{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
+
 
 def print_footer(names)    
   puts "Overall, we have #{names.length} great students"
@@ -34,5 +39,7 @@ end
 
 students = input_students
 print_header
-print(students)
+# print(students)
 print_footer(students)
+print_student_beginning_with_a(students) 
+
